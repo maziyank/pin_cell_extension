@@ -1,0 +1,7 @@
+Type: IPython Notebook Extension
+Compatibility: 3.x, 4.x, 5.x
+Name: Pin Cell
+Main: main.js
+Icon: icon.png
+Link: readme.md
+Description: Pin Cell in the right side of your screen
