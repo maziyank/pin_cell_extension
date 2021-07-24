@@ -1,8 +1,7 @@
 # Pin Cell Extension
 ---
 
-NB Extension to pin your important cell in the sidebar. Save your precious time scrolling up and down just for looking another cell.
-
+Jupyter NB Extension to pin your important cell in the sidebar. Save your precious time scrolling up and down just for looking another cell.
 
 ## Install Extension
 
@@ -12,9 +11,11 @@ Make sure you already installed [jupyter_contrib_nbextensions](https://jupyter-c
 or
 ``` conda install -c conda-forge jupyter_contrib_nbextensions ```
 
-Currently this extension is not part of `jupyter_contrib_nbextensions`. So you need to copy folder `pin_cell` to your `jupyter_contrib_nbextensions` folder in your machine. For example in Windows `/Users/username/anaconda3/envs/jupyterexperiments/lib/python3.7/site-packages/jupyter_contrib_nbextensions/nbextensions`.
+Currently this extension is not part of `jupyter_contrib_nbextensions`. So you need to copy folder `pin_cell` to your `jupyter_contrib_nbextensions` folder in your machine. F
 
-Aftar thar, open your terminal and install this extension using below command:
+or example in Windows `/Users/username/anaconda3/envs/jupyterexperiments/lib/python3.7/site-packages/jupyter_contrib_nbextensions/nbextensions`.
+
+After that, open your terminal and install this extension using below command:
 
 ``` jupyter nbextension install pin_cell ```
 
@@ -25,5 +26,5 @@ Aftar thar, open your terminal and install this extension using below command:
 - Select a cell that you want to pinned.
 - Click pin cell icon in the toolbar
 
-![Pin Cell](pin_cell.gif "Pin Cell")
+![Pin Cell](pin_cell/pin_cell.gif "Pin Cell")
 
