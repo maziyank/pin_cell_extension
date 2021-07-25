@@ -9,7 +9,7 @@ Make sure you already installed [jupyter_contrib_nbextensions](https://jupyter-c
 Currently this extension is not part of `jupyter_contrib_nbextensions`. 
 
 You need to clone this repo manualy
-```git clone git://github.com/minrk/nbextension-scratchpad```
+```git clone git://github.com/maziyank/pin_cell_extension```
 
 and then copy folder `pin_cell` to your `(jupyter --data-dir)/nbextensions` folder in your machine,
 
