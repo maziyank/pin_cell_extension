@@ -5,9 +5,6 @@ Jupyter NB Extension to pin your important cell in the sidebar. Save your precio
 
 ## Install Extension
 
-Make sure you already installed [jupyter_contrib_nbextensions](https://jupyter-contrib-nbextensions.readthedocs.io/en/latest/install.html).
-Currently this extension is not part of `jupyter_contrib_nbextensions`. 
-
 You need to clone this repo manualy
 ```git clone git://github.com/maziyank/pin_cell_extension```
 
