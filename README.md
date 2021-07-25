@@ -5,17 +5,15 @@ Jupyter NB Extension to pin your important cell in the sidebar. Save your precio
 
 ## Install Extension
 
-Make sure you already installed [jupyter_contrib_nbextensions](https://jupyter-contrib-nbextensions.readthedocs.io/en/latest/install.html)
+Make sure you already installed [jupyter_contrib_nbextensions](https://jupyter-contrib-nbextensions.readthedocs.io/en/latest/install.html).
+Currently this extension is not part of `jupyter_contrib_nbextensions`. 
 
-``` pip install jupyter_contrib_nbextensions ``` 
-or
-``` conda install -c conda-forge jupyter_contrib_nbextensions ```
+You need to clone this repo manualy
+```git clone git://github.com/minrk/nbextension-scratchpad```
 
-Currently this extension is not part of `jupyter_contrib_nbextensions`. So you need to copy folder `pin_cell` to your `jupyter_contrib_nbextensions` folder in your machine. F
+and then copy folder `pin_cell` to your `(jupyter --data-dir)/nbextensions` folder in your machine,
 
-or example in Windows `/Users/username/anaconda3/envs/jupyterexperiments/lib/python3.7/site-packages/jupyter_contrib_nbextensions/nbextensions`.
-
-After that, open your terminal and install this extension using below command:
+After that, install this extension using this command:
 
 ``` jupyter nbextension install pin_cell ```
 
