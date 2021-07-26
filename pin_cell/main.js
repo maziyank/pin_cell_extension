@@ -89,6 +89,8 @@ define(["require",
         pinnedCell.find(".CodeMirror").css("overflow", "auto");
         pinnedCell.find(".CodeMirror-hscrollbar").remove();
         pinnedCell.find(".CodeMirror-cscrollbar").remove();
+        pinnedCell.find("div.output_subarea").css("max-width", "unset");
+        
 
         $('<div class="pin-cell-box"/>')
             .append($('<div class="pin-cell-header"><h3 class="pin-cell-number"/></div>')
