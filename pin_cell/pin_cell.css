@@ -36,7 +36,7 @@
     margin-left: 5px
 }
 
-#pin-panel-header button {
+#pin-panel-header button, .pin-cell-header button {
   margin-left: 5px;
   float:right;
   border: none;
@@ -45,6 +45,33 @@
 #pin-panel-body {
   flex: 1 1 auto;
   width: 100%;
-  padding: 5px 20px;
+  padding: 5px 10px;
   overflow: auto;
+}
+
+.pin-cell-header {
+  padding: 8px;
+  margin: 0;
+  flex: none;
+}
+
+.pin-cell-box {
+  width: 100%;
+  padding: 5px;
+}
+
+.pin-cell-header h3 {
+  display: inline;
+  font-size: 12px;
+  margin-left: 5px;
+  font-weight: bolder;
+}
+
+.pin-cell-body {
+  width: 100%;
+  height: auto;
+}
+
+.pin-cell-header button{
+  background: transparent;
 }

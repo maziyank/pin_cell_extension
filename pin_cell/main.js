@@ -8,7 +8,7 @@ define(["require",
     'base/js/namespace'
 ], function (requirejs, Jupyter) {
     'use strict';
-    let pinnedCell = null;
+
 
     const load_css = () => {
         const link = document.createElement("link");
@@ -63,34 +63,49 @@ define(["require",
             .css('padding', '0')
             .css('flex', 'none');;
 
-        pinnedCell = null;
+    }
+
+    const reorderCellNumber = () => {
+        // reorder number
+        $(".pin-cell-number").each((index, element) => {
+            $(element).text('Pinned Cell #' + (index + 1).toString())
+        })
+    }
+
+    const removeCell = (event) => {
+        if (!event && event.target) return;
+        const parent = $(event.target).closest(".pin-cell-box");
+        if (!parent) return
+        parent.empty();
+        parent.remove();
+        reorderCellNumber()
     }
 
     const pinActiveCell = () => {
-        if (pinnedCell) {
-            $(pinnedCell).removeClass('pinned');
-        }
-
         const panel_body = $('#pin-panel-body');
-
-        pinnedCell = Jupyter.notebook.get_selected_cell().element.clone();
+        const pinnedCell = Jupyter.notebook.get_selected_cell().element.clone();
         pinnedCell.removeClass('selected');
         pinnedCell.find(".prompt").remove();
         pinnedCell.find(".CodeMirror").css("overflow", "auto");
         pinnedCell.find(".CodeMirror-hscrollbar").remove();
         pinnedCell.find(".CodeMirror-cscrollbar").remove();
 
-        $(pinnedCell).addClass('pinned');
-        panel_body.empty()
-        panel_body.append(pinnedCell);
-    }
+        $('<div class="pin-cell-box"/>')
+            .append($('<div class="pin-cell-header"><h3 class="pin-cell-number"/></div>')
+                .append($('<button type="button"><i class="fa-times fa"></i></button>').click(removeCell))
+            )
+            .append($('<div class="pin-cell-body"/>')
+                .append(pinnedCell))
+            .appendTo(panel_body);
 
+        reorderCellNumber()
+    }
 
     const initSidePanel = () => {
         $('<div id="pin-panel-wrapper"/>')
             .append($('<div id="pin-panel-sidebar"/>')
-                .append($('<div id="pin-panel-header"><i class="fa-thumb-tack fa"></i><h3>Pinned Cell</h3></div>')
-                    .append($('<button type="button"><i class="fa-times fa"></i></button>').click(() => hidePanel()))
+                .append($('<div id="pin-panel-header"><i class="fa-thumb-tack fa"></i><h3>Pinned Cells</h3></div>')
+                    .append($('<button type="button"><i class="fa-times fa"></i></button>').click(hidePanel))
                 ).append($('<div id="pin-panel-body"></div>'))
             ).resizable({
                 handles: 'w',
@@ -108,6 +123,10 @@ define(["require",
         load_css();
         initToolbarButton();
         initSidePanel();
+
+        $("p").click(function () {
+            $(this).slideUp();
+        });
     };
 
     return {
