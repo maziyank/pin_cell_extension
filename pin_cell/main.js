@@ -125,10 +125,6 @@ define(["require",
         load_css();
         initToolbarButton();
         initSidePanel();
-
-        $("p").click(function () {
-            $(this).slideUp();
-        });
     };
 
     return {
